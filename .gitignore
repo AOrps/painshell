@@ -1,0 +1,15 @@
+# Files
+*~
+.env
+
+
+## Binary
+losh
+loshh
+*.o
+
+# Directories
+env/
+
+# Log Files
+*.log

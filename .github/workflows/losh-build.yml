@@ -1,0 +1,26 @@
+name: Losh Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: "Checkout Repo"
+      uses: actions/checkout@v4
+
+    - name: "Set up dependencies"
+      run: sudo apt install -y gcc make
+
+    - name: "Build"
+      run: make
+
+   # TODO add Hardening Build, `make harden` & clang
+
+    - name: "Test"
+      run: make test
